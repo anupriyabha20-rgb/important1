@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will you be my Valentine?</title>
+  <style>
+    body {
+      background: #fdecef;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    .no {
+      background: #ddd;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="card">
+    <h2>Prasun, will you be my Valentine? 💖</h2>
+    <button class="yes" onclick="yesClicked()">Yes</button>
+    <button class="no" onmouseover="moveNo()">No</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const btn = document.querySelector('.no');
+      btn.style.top = Math.random() * 80 + "vh";
+      btn.style.left = Math.random() * 80 + "vw";
+    }
+
+    function yesClicked() {
+      document.getElementById("card").innerHTML = `
+        <h2>YAY!!! 🎉💘</h2>
+        <p>You just made my day 😄</p>
+        <img src="https://media.giphy.com/media/3oz8xAFtqoOUUrsh7W/giphy.gif" width="200">
+      `;
+    }
+  </script>
+</body>
+</html>
